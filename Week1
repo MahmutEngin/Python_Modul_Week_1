@@ -1,0 +1,176 @@
+#Soru 1: Ekrana 1'den 10'a kadar sayıları yazdıran bir Python kodu yazın.
+for i in range(1,11):
+    print(i)
+print("=================================")
+
+#Soru 2: Kullanıcıdan bir sayı girişi alın ve ekrana bu sayıya kadar çift sayıları yazdıran bir Python programı yazın.
+         #Bunu önce 'for' ile sonra da 'while' döngüleriyle yapın.
+sayi=int(input("Lutfen en az 2 olacak sekilde bir sayi giriniz :"))
+
+for i in range(sayi):
+    if i%2==0:
+        print(i)
+a=0
+while True:
+    sayi2=int(input("Lutfen en az 2 olacak sekilde bir sayi giriniz: "))
+    for i in range(sayi2):
+        if i%2==0:
+            print(i)
+            a+=i
+    if a!=0:
+         break
+
+#Soru 3: Kullanıcıdan başlangıç ve bitiş değerini alıp,
+# bu değerler arasındaki tüm sayıları (bitiş değeri dahil) ekrana yazdıran bir Python kodu yazınız.
+
+baslangic=int(input("lutfen baslangic sayisini giriniz"))
+bitis=int(input("lutfen bitis sayisini giriniz"))
+
+for i in range(baslangic,bitis+1):
+        print(i,sep=" ", end=" ")
+
+#Soru 4: Kullanıcıdan bir sayı alın ve bu sayının tek mi
+# yoksa çift mi olduğunu yazdıran bir Python kodu yazın.
+
+rakam=int(input("Lutfen bir sayi giriniz :"))
+
+if rakam%2==0:
+    print(f"Girilen {rakam} rakami cifttir")
+else:
+    print(f" Girilen {rakam} rakami tektir")
+
+# Soru 5: Kullanıcıdan pozitif bir tam sayı girişi alan ve faktöriyelini hesaplayan bir Python programı yazın.
+# Faktöriyel, bir sayının kendisi ile 1 arasındaki tüm pozitif tam sayıların çarpımıdır.
+# Örneğin: kullanıcı 5 girdiyse, program aşağıdaki çıktıyı vermelidir: Kullanıcıdan bir sayı girin:
+# 5 Faktöriyel: 120
+
+sayi=int(input("Lutfen bir sayi giriniz :"))
+faktoriyel=1
+sayac=1
+while sayac<=sayi:
+    faktoriyel*=sayac
+    sayac+=1
+print(faktoriyel)
+
+print("=====================================")
+sayi2=int(input("Lutfen bir sayi giriniz :"))
+faktoriyel2=1
+for i in range(1,sayi2+1):
+    faktoriyel2*=i
+print(f"{sayi2}'nin faktoriyeli:", faktoriyel2)
+
+#Soru 6: Kullanıcıdan bir sayı alan ve bu sayının
+#asal olup olmadığını kontrol eden bir Python kodu yazın.
+
+sayi1=int(input("Lutfen bir sayi giriniz : "))
+for i in range(2,sayi1+1):
+    if sayi1%i==0:
+        if sayi1==i:
+          print(f"{sayi1}'si bir asal sayidir")
+          break
+        else:
+          print(f"{sayi1} bir asal sayi degildir")
+          break
+
+sayi2=int(input("sayi giriniz : "))
+sayac2=2
+while True:
+    if sayi2%sayac2==0:
+        if sayi2==sayac2:
+          print(f"{sayi2}'si bir asal sayidir...")
+          break
+        else:
+          print(f"{sayi2} bir asal sayi degildir...")
+          break
+    else:
+        sayac2+=1
+
+#Soru 7: Fibonacci dizisini hesaplayan ve sonucu belirli bir sınıra kadar sayı içeren
+# bir liste olarak döndüren bir döngü nasıl oluşturulur?
+user_limit = int(input("please write a limit: "))
+
+count = 0
+list_container = list(range(2))
+
+toplam = 0
+ilk,son = 0,1
+while True:
+    toplam = ilk + son
+    list_container.append(toplam)
+    ilk = son
+    son = toplam
+
+    if toplam > user_limit:
+        break
+print(list_container[:-1])
+
+
+
+#Soru 8: Kullanıcıdan bir kelime alan ve bu kelimenin tersini ekrana yazdıran bir Python kodu yazın.
+kelime=input("Lutfen bir kelime giriniz")
+print(kelime[::-1])
+
+#Soru 9: Kullanıcıdan bir kelime girişi alan ve bu kelimenin bir palindrom olup olmadığını
+# (geriye doğru okunduğunda da aynı) kontrol eden bir döngü ve koşullu ifade kombinasyonu nasıl oluşturulur?
+kullanici_veri = input("please write a sentence: ")
+
+if kullanici_veri[::] == kullanici_veri[::-1]:
+    print("the sentence is palindrome")
+else:
+    print("the sentence is not polindrome")
+
+
+#Soru 10: Kişinin kilo endeksini hesaplayan ve endeks değerine göre zayıf,
+# kilolu veya fazla kilolu sonucunu döndüren kodu yazın. (Kilo endeksi hesaplaması için internete bakabilirsiniz)
+# Bunun için kullanıcıdan kilo ve boy ölçülerini isteyin. Kilo endeksi 25'in altındaysa zayıf, 25-30 arasıysa normal,
+# 30-40'ın üzerindeyse kilolusunuz. 40'ın üzerindeyse kilolusunuz.
+
+kilo=int(input("Lutfen kilonuzu giriniz :"))
+boy=float(input("Lutfen boyunuzu giriniz :"))
+oran=kilo/(boy*boy)
+print(oran)
+print(f"kilo-boy endeksinizin ortalamasi {oran}")
+
+if oran<=25:
+    print(f"maalesef  kilo endeksiniz {oran} oldugu icin zayif kilolusunuz")
+elif oran>25 and oran<=30:
+    print(f"Tebrikler vucud endeks oraniniz {oran}'dir . Cok sagliklisiniz")
+elif oran>30 and oran<=40:
+    print(f"maalesef  kilo endeksiniz {oran} oldugu icin sisman kilodasiniz")
+
+#Soru 11: Kullanıcının girdiği üç sayıdan en büyüğünü bulan bir Python programı nasıl yazılır?
+sayi_1=int(input("Lutfen ilk sayiyi giriniz :"))
+sayi_2=int(input("Lutfen ikinci sayiyi giriniz :"))
+sayi_3=int(input("Lutfen ucuncu sayiyi giriniz :"))
+
+print(f"en buyuk sayi :{max(sayi_1,sayi_2,sayi_3)}")
+print(f"en kucuk sayi : {min(sayi_1,sayi_2,sayi_3)}")
+
+print("======================================")
+sayi_1=int(input("Lutfen ilk sayiyi giriniz :"))
+sayi_2=int(input("Lutfen ikinci sayiyi giriniz :"))
+sayi_3=int(input("Lutfen ucuncu sayiyi giriniz :"))
+
+list=[]
+for i in (sayi_1,sayi_2,sayi_3):
+    list.append(i)
+    #print(i)
+print(f"en_buyuk : {max(list)}")
+print(f"en_kucuk : {min(list)}")
+
+
+#Soru 12: Herhangi bir ders için bir öğrenciden Vize ve Final notlarını alın.
+# Vize sınav notunun %40'ı ile Final notunun %60'ının toplamı yıl sonu ortalamasını verecektir.
+# Ortalama 50'nin altındaysa ekranda "FAILED" (BAŞARISIZ) yazısı, 50 veya üzeriyse ekranda "SUCCESSFUL"
+# (BAŞARILI) yazısı görünecektir.
+# Bu yazdırma işlemi 4 derstir ve dersler birbiri ardına yazılacaktır.
+
+final=int(input("Lutfen final sonucunuzu giriniz :"))
+vize=int(input("Lutfen vize sonucunuzu giriniz :"))
+ortalama=(final*0.60)+(vize*0.4)
+print(f"iki sinavin  ortalamasi : {ortalama}")
+
+if ortalama >=50:
+    print("SONUC SUCESSESFUL")
+else:
+    print("SONUC FAILED")
